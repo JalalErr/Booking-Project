@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- class="h-full bg-white" -->
-<html < class="bg-lime-950" >
+<html  class="bg-lime-950" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
