@@ -36,7 +36,7 @@
           <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         </div>
       </div>
-      <div class="sm:col-span-2">
+      <class="sm:col-span-2">
         <label for="Password" class="block text-sm font-semibold leading-6 text-gray-900">Password :</label>
         <div class="mt-2.5">
           <input type="password"  name="password" id="password" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -53,10 +53,10 @@
 </script>
 
         </div>
-      </div>
+      
       <div class="sm:col-span-2">
       <label for="Password" class="block text-sm font-semibold leading-6 text-gray-900"> Confirme Password :</label>
-          <input type="password"  name="confirme password" id="confirme-password" aria-setsize="1000" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <input type="password"  name="confirme_password" id="confirme password" aria-setsize="1000" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           <input type="checkbox" id="showPasswordCheckbox1"> <!-- or use type="button" if you prefer a button -->
           <label for="showPasswordCheckbox1"><b><small>Show Password</small></b></label>
           <script>
@@ -68,6 +68,25 @@
         passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
     });
 </script>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the form data
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirme_password'];
+
+    // Check if passwords match
+    if ($password === $confirme_password) {
+        // Passwords match, proceed with registration logic (e.g., save to database)
+        echo "Registration successful!";
+        // Here you would typically hash the password before saving it
+        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        // Save $hashed_password to your database
+    } else {
+        // Passwords do not match
+        echo "Passwords do not match. Please try again.";
+    }
+}
+?>
 
         </div>
       </div>
@@ -130,7 +149,7 @@
         </label>
       </div>
       <div class="scroll-mx-0">
-      <button type="submit" class="block  rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign-up</button>
+      <button type="submit" class="block  rounded-md bg-lime-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-lime-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime">Sign-up</button>
     </div>
     </div>
     
